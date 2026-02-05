@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://v3f4t1ck77vn"]
+
+[ext_resource type="Script" path="res://Scripts/Character.gd" id="1_cw3vj"]
+[ext_resource type="Shader" path="res://Scenes/ActiveCharacter.gdshader" id="2_2c0xo"]
+[ext_resource type="Texture2D" uid="uid://bxe0knn0p1x16" path="res://Assets/tacticsWarrior-export.png" id="2_6pbuy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqnqa"]
+shader = ExtResource("2_2c0xo")
+shader_parameter/showOutline = false
+shader_parameter/sprite_texture = ExtResource("2_6pbuy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvo4v"]
+size = Vector2(83, 122)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cw3vj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fqnqa")
+position = Vector2(3, -19)
+texture = ExtResource("2_6pbuy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_lvo4v")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

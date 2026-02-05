@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dgpmowmn6ks27"]
+
+[node name="ClickMarker" type="Node2D"]
+scale = Vector2(0.083, 0.1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
