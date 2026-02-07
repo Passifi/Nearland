@@ -6,7 +6,8 @@
 [node name="Node2D" instance=ExtResource("1_nh4w5")]
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, 0)
 texture = ExtResource("2_1247l")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(0.5, -18)
+position = Vector2(-1, 3)

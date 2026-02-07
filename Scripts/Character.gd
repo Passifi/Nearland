@@ -8,6 +8,7 @@ var isMoving = false
 var currentTargetIndex = 0
 @export var stepSize = 450.0
 signal chosePlayer
+signal arrivedAtTarget
 var isActive = false;
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +34,7 @@ func moveToTarget(delta):
 				currentTargetIndex+=1
 				if currentTargetIndex == targets.size():
 					isMoving=false 
+					emit_signal("arrivedAtTarget")
 					
 					
 func setTargets(newTargets: Array[Vector2]):
@@ -49,4 +51,5 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 
 func deactivate():
 		$Sprite2D.material.set_shader_parameter("showOutline",false);
-	
+
+
